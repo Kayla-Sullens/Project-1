@@ -1,0 +1,38 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    background-color: green;
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    padding: 5px;
+}
+
+.search-container {
+    display: grid;
+}
+
+.input-box {
+    padding: 5px;
+    background-color: gainsboro;
+    color: red;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    width: 20%;
+}
+
+.button {
+    outline: none;
+    border: thin solid black;
+    background-color: gainsboro;
+    color: red;
+    border-radius: 3px;
+    width: 20%;
+}
+
+.display-container {
+    background-color: blue;
+}
