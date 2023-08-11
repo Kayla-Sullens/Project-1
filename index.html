@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,68 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="search-container">
-            <input type="text" class="search-box" id="input-box">
-            <button class="button" id="search-button">Search</button>
+
+    <!--Search Bar-->
+    <div class="columns is-centered">
+        <div class="column is-4">
+
+            <div class="field has-addons">
+                <div class="control">
+                    <input class="input" type="text" placeholder="Search Marvel Character">
+                </div>
+                <div class="control">
+                    <a class="button is-info">Search</a>
+                </div>
+            </div>
         </div>
-        <div class="list"></div>
-        <div class="display-container" id="results-content"></div>
-    </div> 
+    </div>
+
+    <!-- Results from search bar broken down into Images, Trailers, and Bio Nav-->
+    <div class="tabs is-toggle is-toggle-rounded is-fullwidth">
+        <ul>
+            <li class="is-active">
+                <a class="button" id="images">
+                    <span class="icon is-small"><i class="fas fa-image"></i></span>
+                    <span>Images</span>
+                </a>
+            </li>
+            <li>
+                <a class="button" id="trailers">
+                    <span class="icon is-small"><i class="fas fa-film"></i></span>
+                    <span>Trailers</span>
+                </a>
+            </li>
+            <li>
+                <a class="button" id="bio">
+                    <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+                    <span>Bio</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Results from Nav buttons clicked will need to include HTML or JS for video and bio-->
+    <div class="columns">
+        <div class="column is-12">
+            <div>
+                <!--H2 which will contain the hero name that was searched-->
+                <h2 id="character-name">Character Name</h2>
+
+                <figure class="image is-150x150">
+                    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
 
     <script src="./assets/javascript/script.js"></script>
 </body>
-  
+
 </html>
