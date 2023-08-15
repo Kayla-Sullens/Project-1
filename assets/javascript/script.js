@@ -14,12 +14,17 @@ function getCharacter(character) {
 
     var url = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&name=${character}&apikey=${apiKey}&hash=${hash}`;
     fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-        })
+    var response = fetch(url);
+    var jsonData = response.json();
+    jsonData.data["results"].forEach(element)() 
+        character.innerHTML = `
+        <div class ="results-container">
+            <div class ="character-name"> ${element.name} </div>
+            <div class ="character-image">
+                <img src ="${element.thumbnail["path"] + "." + element.thumbnail["extension"]}">
+            </div>
+            <div class ="character-bio"> ${element.description} </div>
+        </div>`;
 }
 
 //var date = new Date();
@@ -30,11 +35,15 @@ function getCharacter(character) {
 searchBtn.addEventListener("click", function () {
     if (input.value.length < 1) {
         alert("Input value cannot be left blank");
-    } else  {
-        getCharacter(input.value);
-    }
+     } else  {
+         getCharacter(input.value);
+         getCharacter.innerHTML = "";
+   
+     }
 
 });
+
+
 
 
 
