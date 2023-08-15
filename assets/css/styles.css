@@ -26,3 +26,30 @@ figure.image {
     text-align: center;
     font-size: xx-large;
 }
+
+.results-container {
+
+}
+
+.character-name {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+
+}
+
+.character-image { 
+    border-radius: 50%;
+    background-color: black;
+}
+
+.character-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.character-bio {
+    font-size: 18px;
+    color: red;
+    
+}
