@@ -4,7 +4,7 @@ var trailersBtn = document.getElementById("trailersBtn");
 var bioBtn = document.getElementById("bioBtn");
 var apiKey = "62950945477f52a6587962327ba60ae0";
 var privateKey = "376d22d9276bc21ecc8dea681b71371870cdfab2";
-var character = document.getElementsByClassName("character");
+var character = document.querySelector("#character");
 
 
 function getCharacter(character) {
@@ -18,19 +18,21 @@ function getCharacter(character) {
             return response.json();
         })
         .then(function (data) {
-            displayCharacter(data);}
-            );
+            displayCharacter(data);
+        }
+        );
 }
 
-function displayCharacter(element) { 
+function displayCharacter(data) {
 
-    character.textContent= `
+    var characterData = data.data.results[0];
+    character.innerHTML = `
 <div class ="results-container">
-    <div class ="character-name"> ${element.name} </div>
+    <div class ="character-name"> ${characterData.name} </div>
     <div class ="character-image">
-        <img src ="${element.thumbnail}">
+        <img src ="${characterData.thumbnail.path}.${characterData.thumbnail.extension}">
     </div>
-    <div class ="character-bio"> ${element.description} </div>
+    <div class ="character-bio"> ${characterData.description} </div>
 </div>`;
 }
 
