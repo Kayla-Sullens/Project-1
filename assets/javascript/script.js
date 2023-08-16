@@ -36,6 +36,46 @@ function displayCharacter(data) {
 </div>`;
 }
 
+function getPowers(powers) {
+
+    var url = `https://marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com/name?`;
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            displayPowers(data);
+        }
+        );
+}
+
+function displayPowers(powers) {
+
+    var characterPowers = powers[0];
+    console.log(powers);
+    powers.innerHTML = `
+<div class ="results-container">
+    <div class ="powers"> ${characterPowers} </div>
+</div>`;
+}
+
+// const url = 'https://marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com/name?q=Iron';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'ed72ac1853mshb4ac53e793c6448p1df269jsn33bde7147831',
+// 		'X-RapidAPI-Host': 'marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com'
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+// }
+
 searchBtn.addEventListener("click", function () {
     if (input.value.length < 1) {
         alert("Input value cannot be left blank");
