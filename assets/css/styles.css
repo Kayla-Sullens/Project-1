@@ -1,14 +1,18 @@
+html {
+    background-color: black;
+}
+
+body {
+    padding: 15px;
+}
 
 .button.is-info {
-    width: 100px;
-    margin-top: 50px;
- 
+    margin-top: 25px;
+
 }
 
 input.input {
     margin-top: 50px;
-    width: 400px;
-    margin-left: 30px;
 }
 
 .image img {
@@ -31,21 +35,30 @@ figure.image {
     text-align: center;
     text-transform: uppercase;
     font-size: 40px;
+    color: white;
 
 }
 
-.character-image { 
-    border-radius: 50%;
-    background-color: black;
+.character-image {
+    text-align: center;
 }
 
 .character-image img {
-    width: 100%;
+    width: 50%;
     border-radius: 50%;
+
 }
 
 .character-bio {
-    font-size: 18px;
+    font-size: 20px;
     color: red;
+    text-align: center;
+    padding: 10px;
 
+}
+
+.powers-list {
+    color: white;
+    font-size: 20px;
+    text-align: center;
 }

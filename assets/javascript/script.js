@@ -56,11 +56,11 @@ function getPowers(character) {
 }
 
 function displayPowers(data) {
-
+    powers.innerHTML = "";
     var characterPowers = data[0].powers;
     var ul = document.createElement("ul");
     ul.classList.add("powers-list");
-    for( var i = 0; i < characterPowers.length; i++) {
+    for (var i = 0; i < characterPowers.length; i++) {
         var power = characterPowers[i];
         var li = document.createElement("li");
         li.textContent = power;
@@ -69,22 +69,6 @@ function displayPowers(data) {
     powers.append(ul)
 }
 
-// const url = 'https://marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com/name?q=Iron';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': 'ed72ac1853mshb4ac53e793c6448p1df269jsn33bde7147831',
-// 		'X-RapidAPI-Host': 'marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com'
-// 	}
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
 
 searchBtn.addEventListener("click", function () {
     if (input.value.length < 1) {
