@@ -27,10 +27,6 @@ figure.image {
     font-size: xx-large;
 }
 
-.results-container {
-
-}
-
 .character-name {
     text-align: center;
     text-transform: uppercase;
@@ -51,5 +47,5 @@ figure.image {
 .character-bio {
     font-size: 18px;
     color: red;
-    
+
 }
