@@ -36,27 +36,37 @@ function displayCharacter(data) {
 </div>`;
 }
 
-function getPowers(powers) {
+function getPowers(character) {
 
-    var url = `https://marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com/name?`;
-    fetch(url)
+    var url = `https://marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com/name?q=${character}`;
+    fetch(url, {
+        headers: {
+            'X-RapidAPI-Key': 'f6ec1e9b0fmsha845a9bc3b0f598p1a34b7jsne08e0558741b',
+            'X-RapidAPI-Host': 'marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com'
+        }
+    })
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             displayPowers(data);
+
         }
         );
 }
 
-function displayPowers(powers) {
+function displayPowers(data) {
 
-    var characterPowers = powers[0];
-    console.log(powers);
-    powers.innerHTML = `
-<div class ="results-container">
-    <div class ="powers"> ${characterPowers} </div>
-</div>`;
+    var characterPowers = data[0].powers;
+    var ul = document.createElement("ul");
+    ul.classList.add("powers-list");
+    for( var i = 0; i < characterPowers.length; i++) {
+        var power = characterPowers[i];
+        var li = document.createElement("li");
+        li.textContent = power;
+        ul.append(li);
+    }
+    powers.append(ul)
 }
 
 // const url = 'https://marvel-heroic-api-unlock-the-mcu-legendary-characters.p.rapidapi.com/name?q=Iron';
@@ -81,8 +91,7 @@ searchBtn.addEventListener("click", function () {
         alert("Input value cannot be left blank");
     } else {
         getCharacter(input.value);
-        getCharacter.innerHTML = "";
-
+        getPowers(input.value);
     }
 
 });
